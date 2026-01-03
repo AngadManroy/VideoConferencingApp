@@ -1,4 +1,4 @@
-import type { Room } from "../types/index.js"; //check
+import type { Room } from "../types/index.js";
 import { logger } from "../utils/logger.js"
 
 class RoomService {
@@ -32,7 +32,7 @@ class RoomService {
    * Get the partner's socketId for a given user
    */
     getPartner(socketId: string): string | null {
-        return this.userToPartner.get(socketId) ?? null;//check
+        return this.userToPartner.get(socketId) ?? null;
     }
 
     /**
