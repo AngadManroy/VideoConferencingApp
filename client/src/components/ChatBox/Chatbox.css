@@ -1,0 +1,145 @@
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    padding: 1rem;
+    border-bottom: 2px solid #3d3d3d;
+}
+
+.chat-header h3 {
+    font-size: 1.25rem;
+    color: #00aff0;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    animation: slideIn 0.2s ease-out;
+}
+
+.messages-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1rem;
+    overflow-y: auto;
+    gap: 0.5rem;
+}
+
+/*Scrollbar Styling*/
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: #3d3d3d;
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background: #4d4d4d;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.no-messages {
+    text-align: center;
+    color: #888;
+    margin-top: 2rem;
+}
+
+.message.mine {
+    align-self: flex-end;
+}
+
+.message.theirs {
+    align-self: flex-start;
+}
+
+.message-content {
+    padding: 0.75rem;
+    word-wrap: break-word;
+    border-radius: 12px;
+}
+
+.message.mine .message-content {
+    background-color: #00aff0;
+    color: #ffffff;
+}
+
+.message.theirs .message-content {
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 0.25rem;
+    padding: 0 0.5rem;
+}
+
+.message-input-form {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 2px solid #3d3d3d;
+}
+
+.message-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.message-input:focus {
+    outline: 2px solid #00aff0;
+}
+
+.message-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.send-button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #00aff0;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* show this when hovered and btn is not disabled */
+.send-button:hover:not(:disabled) {
+    background-color: #0099d8;
+}
+
+.send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
